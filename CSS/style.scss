@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import "All Variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100vw;
+    background-color: $gray;
+    overflow-x: hidden;
+}
+
+main{
+    background-color: $gray;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button{
+    display: none;
+}
+
+// Container TITLE
+.Container__Title{
+    width: 100vw;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+
+    .title__shadow{
+        position: relative;
+
+        h1{
+            text-shadow: 0px 0px 0px rgba(255,255,255,1);
+            color: white;
+            font-size: 5vw;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1vw;
+        }
+    }
+
+    h2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 3vw;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
+    }
+}
+
+// Button
+.btn{
+    padding: .5rem 1rem;
+    border: none;
+    background-color: $blue;
+    color: $white;
+    font-size: 2vh;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    column-gap: 10px;
+
+    i{
+        font-size: 1.3rem;
+    }
+}
+
+input,
+textarea,
+select{
+    border: none;
+    width: 100%;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+}
+
+
+
+// HEADER BAR START
+header{
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    background: $blue;
+    color: $white;
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+
+    .logo{
+        font-size: 1vw;
+        font-weight: 600;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+    }
+
+    .menu__btn{
+        width: 30px;        
+        display: block;
+        cursor: pointer;
+        
+        
+        div{
+            height: .2rem;
+            background-color: $white;
+            margin: .3rem 0;
+            border-radius: 25px;
+            transition: .5s;
+        }
+
+        .one{
+            width: 25px;
+        }
+
+        .two{
+            width: 15px;
+        }
+
+        .three{
+            width: 20px;
+        }
+    }
+
+    &.menuActive{
+
+        .menu__btn{
+
+            .one{
+                width: 100%;
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .two{
+                opacity: 0;
+            }
+
+            .three{
+                width: 100%;
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
+    }
+}
+
+// NAVIGATION
+.menuLine{
+    background-color: $green;
+    position: fixed;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 1vh;
+    transition: 1s;
+    opacity: 0;
+}
+
+.navigation{
+
+    .menuLine{
+        opacity: 1;
+        left: 50%;
+    }
+}
+
+// Navigation Container
+.navigation__container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+    padding: 2rem;
+    transform: scale(0);
+    transition: 1s;
+    transition-delay: .5s;
+    z-index: 4;
+    
+    a{
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+
+        &:hover{
+            background-color: $pink;
+        }
+    }
+}
+
+.navigation{
+
+    .navigation__container{
+        transform: scale(1);
+    }
+}
+
+
+// Home Container
+.home__Container{
+    background-color: $white;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    column-gap: 7vw;
+    padding: 5rem;
+
+    .content{
+
+        h1{
+            font-size: 3vw;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            margin: .5vh 0;
+        }
+
+        p{
+            font-size: 2vw;
+            margin: .5vh 0;
+            letter-spacing: .1vw;
+        }
+
+        .button{
+            display: flex;
+
+            button {
+                margin-right: 1vw;
+            }
+        }
+    }
+
+    .video{
+        width: 50vw;
+        height: 50vh;
+    }
+}
+
+
+// About Container
+.about__container{
+    padding: 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about__image{
+        width: 50vw;
+        height: 50vh;
+        border-radius: 10px;
+        border: .4rem solid $white;
+
+        img{
+            width: 100%;
+            height: 100%;
+            padding: .5rem;
+            border-radius: 15px;
+        }
+    }
+
+    .about__content{
+        padding: 2rem;
+
+        .about__title{
+            font-size: 2.5vw;
+            text-align: center;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+            padding: 1rem 0;
+        }
+
+        .about__description{
+            font-size: 1.3vw;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+
+        button{
+            margin: 1rem 0;
+        }
+    }
+}
+
+
+// Service Container
+.service__container{
+    padding: 2rem 5rem;
+    width: 100vw;
+    
+    .box{
+        background-color: $white;
+        display: flex;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+
+
+        .box__content{
+            width: 50vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+
+            h2{
+                font-size: 2rem;
+                text-transform: uppercase;
+                letter-spacing: .3rem;
+                text-align: center;
+            }
+
+            p{
+                font-size: 1rem;
+                text-align: justify;
+                text-transform: lowercase;
+                margin: 1rem 0;
+            }
+
+            button{
+                width: 15vw;
+            }
+        }
+
+        .box__image{
+            width: 50vw;
+            height: 50vh;
+
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+
+// ContactUs Container
+.contactus__container{
+    padding: 2rem 5rem;
+
+    .social__container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 2rem 10vw;
+        gap: 2vw;
+        text-align: center;
+
+        .social__box{
+            background-color: #FFFFFF;
+            box-shadow: 0 0 5px white;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 10px;
+            opacity: .5;
+
+            &:hover{
+                background-color: $white;
+                color: $crimson;
+                opacity: 1;
+            }
+
+            i{
+                font-size: 2rem;
+
+                &.phone{
+                    color: $pink;
+                }
+
+                &.email{
+                    color: $cinnabar;
+                }
+
+                &.address{
+                    color: $teal;
+                }
+
+                &.meta{
+                    color: $blue;
+                }
+
+                &.instagram{
+                    color: $red;
+                }
+
+                &.whatshapp{
+                    color: $green;
+                }
+
+
+            }
+
+            h3{
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .contactus__box{
+        display: flex;
+        padding: 2rem 0;
+
+        .contactus__image{
+            width: 50vw;
+            height: 50vh;
+
+            video{
+                border-radius: 20px;
+            }
+        }
+
+        .contactus__form{
+            display: flex;
+            justify-content: center;
+            width: 50vw;
+            align-items: center;
+            padding: 0 3rem;
+
+            form{
+                width: 100%;
+
+                .input__box{
+                    position: relative;
+
+                    &.w100{
+                        display: flex;
+                        justify-content: space-between;
+                        column-gap: 20px;
+                    }
+
+                    label{
+                        margin-left: 1rem;
+                    }
+                }
+
+                button{
+                    display: flex;
+                    column-gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+// Footer
+footer{
+    border-top: 1px solid $blue;
+    padding: 1rem;
+    text-align: center;
+
+    a{
+        text-decoration: underline;
+    }
+}
+
+
+// Scroll Top Button
+.topBtn{
+    position: fixed;
+    bottom: 50px;
+    right: -100%;
+}
+
+.ScrollingTop{
+    .topBtn{
+        right: 50px;
+    }
+}
+
+
+
+
+// Signin And Signup Form
+.forms{
+    width: 100vw;
+    height: 100vh;
+    background: $low-gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+    form{
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        width: 40vw;
+        height: auto;
+
+        .form__header{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $gray;
+
+            i{
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+
+        .form__body{
+            margin: 1rem 0;
+
+            select,
+            input{
+                color: $pink;
+                border-bottom: 1px solid $gray;
+
+                &:visited{
+                    border-bottom: 1px solid $blue;
+                }
+            }
+        }
+
+        .form__footer{
+            button
+            {
+                float: right;
+            }
+        }
+    }
+}
+
+.Open{
+    .forms{
+        display: flex;
+        visibility: visible;
+    }
+}
